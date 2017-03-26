@@ -1,0 +1,132 @@
+
+
+\begin{frame}{Map Application on NDN}
+
+Why use maps over NDN?
+\begin{itemize}
+\item Exploiting network awareness of locality
+\pause
+\item Caching \& Offline Navigation
+\pause
+\item Privacy
+\end{itemize}
+
+\pause
+Questions:
+\begin{itemize}
+\item Namespace design?
+\pause
+\item Local Forwarding Strategy?
+\end{itemize}
+
+	
+\end{frame}
+
+
+
+\begin{frame}{Wireless Ad-hoc Scenario}
+\begin{center}
+\includegraphics[width=\linewidth]{images/topo2.png}
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}{How OpenStreetMap Works}
+
+\begin{itemize}
+\item Tiles: 256x256px (png)
+\begin{itemize}
+\item Different Zoom Levels (0-19)
+\item http://tile.openstreetmap.org/18/129812/85057.png
+\item 
+\includegraphics[width=0.25\linewidth]{images/tile.png}
+\pause
+
+
+\end{itemize}
+\item Other data: Nodes, Paths (XML, JSON)
+\item Why not Google Maps? No access to raw data
+\end{itemize}
+\pause
+
+Better Namespace?
+\begin{itemize}
+\item /maps/$Z_0$/$Z_1$/\ldots/$Z_n$
+\item $Z_i$ = \{ 0, 1, 2, 3 \}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Namespace Example: /maps/0/1/2}
+\begin{center}
+\includegraphics[width=0.75\linewidth]{images/square.png}
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}{Implementation}
+\begin{center}
+\includegraphics[width=\linewidth]{images/topo2.png}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Implementation}
+	
+Producer: Fetch data from OSM on demand
+\begin{itemize}
+\item Map into NDN namespace
+\item NDN Java Library
+\end{itemize}
+\pause
+
+Consumer: Integrate OSM Display Framework with NDN
+\begin{itemize}
+\item Still work in progress :) 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Conclusions}
+	
+Maps interesting application for NDN
+\begin{itemize}
+\item Content-awareness of Network Layer
+\item Exploiting Locality 
+\item Caching \& Offline Use
+\end{itemize}
+
+\pause
+Future Work:
+\begin{itemize}
+\item Finishing the Code
+\item Navigation
+\end{itemize}
+	
+
+\end{frame}
+
+
+%% Last slide
+\begin{frame}
+	\frametitle{The End}
+%	\vspace{1cm}
+	{\LARGE Thank you for
+		your attention!\\
+		\vspace*{2em}
+		Questions?
+	}
+%	\vspace{1.5cm}  
+%	\begin{flushright}  
+%		Klaus Schneider \\ \footnotesize{\url{klaus@cs.arizona.edu}}
+%	\end{flushright}
+\end{frame}
+
+
+
